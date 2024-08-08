@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calculator Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CalculatorController" customModule="SimpleCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWL-2M-Fji">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g2D-9l-9bP">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="464"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ou5-6d-eAy">
+                                        <rect key="frame" x="10" y="464" width="373" height="245"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-OU-FMc">
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="245"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjE-dw-NWK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="373" height="49"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1Z-R9-F29">
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="AC">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="clearButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dhf-O2-dBv"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPl-Hk-V30">
+                                                                <rect key="frame" x="93.333333333333343" y="0.0" width="93.333333333333343" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="CUR">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="currencyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u4y-Nc-sAv"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bY3-Zk-Nv1">
+                                                                <rect key="frame" x="186.66666666666666" y="0.0" width="92.999999999999972" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="%">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="percentageButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Suq-8K-R0N"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJ1-Ih-1wJ">
+                                                                <rect key="frame" x="279.66666666666669" y="0.0" width="93.333333333333314" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="÷">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="divideButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q1C-lr-bkk"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwZ-Hh-TD6">
+                                                        <rect key="frame" x="0.0" y="49" width="373" height="49"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7t-Pw-44n">
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="7">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="sevenButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UlZ-1H-lZp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJa-l9-uUf">
+                                                                <rect key="frame" x="93.333333333333343" y="0.0" width="93.333333333333343" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="8">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="eightButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ApO-zB-XoP"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVa-C7-zq2">
+                                                                <rect key="frame" x="186.66666666666666" y="0.0" width="92.999999999999972" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="9">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="nineButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zRb-8h-Ywe"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbf-xL-4KO">
+                                                                <rect key="frame" x="279.66666666666669" y="0.0" width="93.333333333333314" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="multiplyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNS-Xw-AGk"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21l-Cg-b1z">
+                                                        <rect key="frame" x="0.0" y="98" width="373" height="49"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xB4-RS-LDC">
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="4">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="fourButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hq6-qA-oS2"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X71-Rl-WeE">
+                                                                <rect key="frame" x="93.333333333333343" y="0.0" width="93.333333333333343" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="5">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="fiveButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="80h-WN-lG0"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzS-bq-K6j">
+                                                                <rect key="frame" x="186.66666666666666" y="0.0" width="92.999999999999972" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="6">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="sixButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AZg-qm-Lwk"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTd-sK-q3l">
+                                                                <rect key="frame" x="279.66666666666669" y="0.0" width="93.333333333333314" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="-">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="minus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7GJ-OM-hhT"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKk-SM-6Mf">
+                                                        <rect key="frame" x="0.0" y="147" width="373" height="49"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rs-Aj-zSe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="1">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="oneButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C8p-Om-qLc"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D9-9R-3pj">
+                                                                <rect key="frame" x="93.333333333333343" y="0.0" width="93.333333333333343" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="2">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="twoButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eiQ-cP-44D"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5d-QT-hXd">
+                                                                <rect key="frame" x="186.66666666666666" y="0.0" width="92.999999999999972" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="3">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="threeButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fos-JI-Db8"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuT-Q4-jy0">
+                                                                <rect key="frame" x="279.66666666666669" y="0.0" width="93.333333333333314" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="+">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="plusButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yo9-lU-L9J"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="HsB-Vp-rtL">
+                                                        <rect key="frame" x="0.0" y="196" width="373" height="49"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEv-sd-aco">
+                                                                <rect key="frame" x="0.0" y="0.0" width="124.33333333333333" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="0">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="zeroButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qp2-D1-Rdh"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLk-3U-6f2">
+                                                                <rect key="frame" x="124.33333333333334" y="0.0" width="124.33333333333334" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title=",">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="commaButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lUE-gI-kW7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2X-d0-kZm">
+                                                                <rect key="frame" x="248.66666666666671" y="0.0" width="124.33333333333334" height="49"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="=">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="equalButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W3z-Sr-3fH"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="fgc-OU-FMc" firstAttribute="centerX" secondItem="ou5-6d-eAy" secondAttribute="centerX" id="3CS-Um-aod"/>
+                                            <constraint firstItem="fgc-OU-FMc" firstAttribute="top" secondItem="ou5-6d-eAy" secondAttribute="top" id="3kp-PS-FWD"/>
+                                            <constraint firstItem="fgc-OU-FMc" firstAttribute="leading" secondItem="ou5-6d-eAy" secondAttribute="leading" id="EZF-BY-j3H"/>
+                                            <constraint firstAttribute="trailing" secondItem="fgc-OU-FMc" secondAttribute="trailing" id="VU6-8x-Fvm"/>
+                                            <constraint firstAttribute="bottom" secondItem="fgc-OU-FMc" secondAttribute="bottom" id="pXJ-GH-18d"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="g2D-9l-9bP" secondAttribute="trailing" id="1cT-JV-ubI"/>
+                                    <constraint firstItem="ou5-6d-eAy" firstAttribute="top" secondItem="g2D-9l-9bP" secondAttribute="bottom" id="Fml-zp-3sP"/>
+                                    <constraint firstItem="ou5-6d-eAy" firstAttribute="leading" secondItem="xWL-2M-Fji" secondAttribute="leading" constant="10" id="N3K-89-YvY"/>
+                                    <constraint firstAttribute="bottom" secondItem="ou5-6d-eAy" secondAttribute="bottom" constant="50" id="ivY-LH-ZEJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ou5-6d-eAy" secondAttribute="trailing" constant="10" id="n1C-dp-A6o"/>
+                                    <constraint firstItem="g2D-9l-9bP" firstAttribute="leading" secondItem="xWL-2M-Fji" secondAttribute="leading" id="p2d-Ts-nTt"/>
+                                    <constraint firstItem="g2D-9l-9bP" firstAttribute="top" secondItem="xWL-2M-Fji" secondAttribute="top" id="rtW-ai-uWj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xWL-2M-Fji" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OdY-Qe-syr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xWL-2M-Fji" secondAttribute="trailing" id="Wq2-Ez-UlW"/>
+                            <constraint firstItem="xWL-2M-Fji" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jMw-2B-Kdr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xWL-2M-Fji" secondAttribute="bottom" id="pRb-CN-hQO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-112" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
