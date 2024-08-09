@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalculatorController: UIViewController {
+class CalculatorController: UIViewController, PassConvertedCurency {
     
     //Outlets
     @IBOutlet weak var topLabel: UILabel!
@@ -17,11 +17,28 @@ class CalculatorController: UIViewController {
     //Variables
     let viewModel = CalculatorControllerViewModel()
     var textInput: String = ""
-    
+    var convertedCurency: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CurencySegue" {
+            if let destinationVC = segue.destination as? CurencyViewController{
+                destinationVC.delegate = self
+                destinationVC.modalPresentationStyle = .overCurrentContext
+                destinationVC.numberToConver = bottomLabel.text ?? ""
+            }
+            
+        }
+    }
+    
+    func didPassCurence(curency: String) {
+        convertedCurency = curency
+        bottomLabel.text = convertedCurency
+    }
+    
 
 //MARK: Actions
     
@@ -30,18 +47,18 @@ class CalculatorController: UIViewController {
     }
     
     @IBAction func currencyButtonAction(_ sender: Any) {
-        viewModel.convertCurrency{ response in
-            let curencyToConvert = self.topLabel.text ?? ""
-            guard let resultOfCurencyToConvert = self.viewModel.evaluteExpression(expression: curencyToConvert) else{
-                print("empty result of curency to convert")
-                self.topLabel.text = ""
-                self.bottomLabel.text = ""
-                self.showAlert()
-                return
-            }
-            let curencyConverted = (Double(resultOfCurencyToConvert) ?? 0) * response
-            self.bottomLabel.text = curencyConverted.description
+        topLabel.text = bottomLabel.text
+        let curencyToConvert = self.topLabel.text ?? ""
+        guard let resultOfCurencyToConvert = self.viewModel.evaluteExpression(expression: curencyToConvert) else{
+            print("empty result of curency to convert")
+            self.topLabel.text = ""
+            self.bottomLabel.text = ""
+            self.showAlert()
+            return
         }
+        bottomLabel.text = resultOfCurencyToConvert
+        performSegue(withIdentifier: "CurencySegue", sender: nil)
+       
     }
     
     @IBAction func equalButtonAction(_ sender: Any) {
@@ -126,17 +143,16 @@ class CalculatorController: UIViewController {
     }
     
     func showAlert() {
-           let alertController = UIAlertController(title: "ERROR",
+        let alertController = UIAlertController(title: "ERROR",
                                                    message: "There was an error with the input, try a different one!",
                                                    preferredStyle: .alert)
            
-           let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-               print("OK button tapped")
-           }
-           
-           alertController.addAction(okAction)
-           
-           self.present(alertController, animated: true, completion: nil)
-       }
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            print("OK button tapped")
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 

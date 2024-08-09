@@ -1,13 +1,20 @@
 //
-//  CalculatorControllerViewModel.swift
+//  CurencyControllerViewModel.swift
 //  SimpleCalculator
 //
-//  Created by Dimitris Kanellidis on 8/8/24.
+//  Created by Dimitris Kanellidis on 9/8/24.
 //
 
 import Foundation
-
-class CalculatorControllerViewModel{
+class CurencyControllerViewModel{
+    let networkManager = NetworkManager()
+    
+    func convertCurrency(fromCurency: String, toCurency: String, completion: @escaping (Double)->Void){
+        networkManager.convertCurrency(fromCurency: fromCurency, toCurency: toCurency) { response in
+            print(response)
+            completion(response)
+        }
+    }
     
     func evaluteExpression(expression: String)->String?{
         let expressionsSymbols = expression.replacingOccurrences(of: "X", with: "*")
