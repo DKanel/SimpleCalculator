@@ -6,22 +6,30 @@
 //
 
 import XCTest
+import Alamofire
 @testable import SimpleCalculator
 
 final class SimpleCalculatorTests: XCTestCase {
-    var viewModel: CalculatorControllerViewModel!
-    
+    var viewModel: CurencyControllerViewModel!
+    var networkManager: NetworkManager!
+    var session: Session!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
-        viewModel = CalculatorControllerViewModel()
+        viewModel = CurencyControllerViewModel()
+        networkManager = NetworkManager()
+        
+        //Mock Request
+        let config = URLSessionConfiguration.default
+        config.protocolClasses = [MockRequest.self]
+        session = Session(configuration: config)
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         viewModel = nil
-        
+        session = nil
         try super.tearDownWithError()
     }
 
@@ -34,14 +42,31 @@ final class SimpleCalculatorTests: XCTestCase {
     
     func testConvertCurrencySuccess() {
         //TO DO : create a mock network manager for a standard value of conversion rate
-            let expectation = self.expectation(description: "Conversion should succeed")
-
-            viewModel.convertCurrency { response in
-                XCTAssertEqual(response, 1.0918, "The conversion rate should be 1.0918")
-                    expectation.fulfill()
+        let expectedConversionRate = 1.23
+        let mockData = """
+        {
+            "conversion_rate": \(expectedConversionRate)
         }
-            
-            waitForExpectations(timeout: 1, handler: nil)
+        """.data(using: .utf8)
+       
+        MockRequest.requestHandler = { request in
+            let response = HTTPURLResponse(
+                url: request.url!,
+                statusCode: 200,
+                httpVersion: nil,
+                headerFields: nil
+            )!
+            return (response, mockData)
+        }
+        
+        let expectation = self.expectation(description: "Currency conversion completes")
+
+        networkManager.convertCurrency(fromCurency: "EUR", toCurency: "USD", session: session, completion: { conversionRate in
+                XCTAssertEqual(conversionRate, expectedConversionRate)
+                expectation.fulfill()
+            })
+
+                waitForExpectations(timeout: 5, handler: nil)
         }
 
     func testPerformanceExample() throws {

@@ -28,7 +28,7 @@ class CalculatorController: UIViewController, PassConvertedCurency {
             if let destinationVC = segue.destination as? CurencyViewController{
                 destinationVC.delegate = self
                 destinationVC.modalPresentationStyle = .overCurrentContext
-                destinationVC.numberToConver = bottomLabel.text ?? ""
+                destinationVC.numberToConvert = bottomLabel.text ?? ""
             }
             
         }

@@ -86,7 +86,6 @@
                                                                 </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="currencyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u4y-Nc-sAv"/>
-                                                                    <segue destination="4Db-xU-oK4" kind="presentation" identifier="CurencySegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="flipHorizontal" id="3zf-GJ-vqh"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJ1-Ih-1wJ">
@@ -290,7 +289,7 @@
                                                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title=",">
+                                                                        <buttonConfiguration key="configuration" style="plain" title=".">
                                                                             <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                                                         </buttonConfiguration>
                                                                         <connections>
@@ -351,6 +350,7 @@
                         <outlet property="bottomLabel" destination="D5a-nZ-nKX" id="we6-Dk-Eh5"/>
                         <outlet property="stackView" destination="fgc-OU-FMc" id="UId-yc-T4b"/>
                         <outlet property="topLabel" destination="tvp-Gc-c0u" id="hwC-jp-75I"/>
+                        <segue destination="4Db-xU-oK4" kind="presentation" identifier="CurencySegue" id="hPH-mL-LMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -362,66 +362,95 @@
             <objects>
                 <viewController storyboardIdentifier="CurencyViewController" id="4Db-xU-oK4" customClass="CurencyViewController" customModule="SimpleCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9w-xF-FBk">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0V7-YC-ChH">
-                                <rect key="frame" x="174.66666666666666" y="100" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5U-dh-1ER">
-                                <rect key="frame" x="121.33333333333333" y="141" width="150.33333333333337" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Choose Curency"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-Nz-Ar4">
-                                <rect key="frame" x="185" y="195.33333333333334" width="23" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lsy-Bu-MSk">
-                                <rect key="frame" x="258.66666666666669" y="767" width="84.333333333333314" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Convert"/>
-                                <connections>
-                                    <action selector="convertButtonAction:" destination="4Db-xU-oK4" eventType="touchUpInside" id="0Bw-D9-cYE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsu-P3-1X5">
-                                <rect key="frame" x="50" y="767" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="cancelButtonAction:" destination="4Db-xU-oK4" eventType="touchUpInside" id="idK-gM-Gd5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jf-Xh-1fE">
-                                <rect key="frame" x="121.33333333333333" y="236.33333333333334" width="150.33333333333337" height="35.000000000000028"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Choose Curency"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shR-hq-XqT">
+                                <rect key="frame" x="71.666666666666686" y="261" width="250" height="320"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0V7-YC-ChH">
+                                        <rect key="frame" x="102.99999999999999" y="46" width="44.000000000000014" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5U-dh-1ER">
+                                        <rect key="frame" x="49.666666666666657" y="82" width="150.33333333333334" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Choose Curency">
+                                            <color key="baseForegroundColor" systemColor="systemYellowColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lsy-Bu-MSk">
+                                        <rect key="frame" x="155.66666666666669" y="275" width="84.333333333333314" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Convert">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="convertButtonAction:" destination="4Db-xU-oK4" eventType="touchUpInside" id="0Bw-D9-cYE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsu-P3-1X5">
+                                        <rect key="frame" x="10" y="275" width="76.666666666666671" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cancelButtonAction:" destination="4Db-xU-oK4" eventType="touchUpInside" id="idK-gM-Gd5"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndb-Nz-Ar4">
+                                        <rect key="frame" x="113.33333333333333" y="131.33333333333331" width="22.999999999999986" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Convert curency!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoE-GE-VFP">
+                                        <rect key="frame" x="59.666666666666671" y="10" width="130.66666666666663" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jf-Xh-1fE">
+                                        <rect key="frame" x="49.666666666666657" y="167.33333333333331" width="150.33333333333334" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Choose Curency">
+                                            <color key="baseForegroundColor" systemColor="systemYellowColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstItem="9jf-Xh-1fE" firstAttribute="top" secondItem="ndb-Nz-Ar4" secondAttribute="bottom" constant="15" id="2JD-r8-eXV"/>
+                                    <constraint firstItem="ndb-Nz-Ar4" firstAttribute="top" secondItem="k5U-dh-1ER" secondAttribute="bottom" constant="15" id="4uh-iO-C0r"/>
+                                    <constraint firstAttribute="width" constant="250" id="6n0-6M-qZX"/>
+                                    <constraint firstItem="k5U-dh-1ER" firstAttribute="top" secondItem="0V7-YC-ChH" secondAttribute="bottom" constant="15" id="9cH-ct-bqV"/>
+                                    <constraint firstItem="0V7-YC-ChH" firstAttribute="centerX" secondItem="shR-hq-XqT" secondAttribute="centerX" id="BBC-R2-4ww"/>
+                                    <constraint firstItem="QoE-GE-VFP" firstAttribute="centerX" secondItem="shR-hq-XqT" secondAttribute="centerX" id="FCS-ue-56B"/>
+                                    <constraint firstItem="9jf-Xh-1fE" firstAttribute="centerX" secondItem="shR-hq-XqT" secondAttribute="centerX" id="IGD-FW-1JT"/>
+                                    <constraint firstItem="ndb-Nz-Ar4" firstAttribute="centerX" secondItem="shR-hq-XqT" secondAttribute="centerX" id="KUg-02-rv4"/>
+                                    <constraint firstItem="lsu-P3-1X5" firstAttribute="leading" secondItem="shR-hq-XqT" secondAttribute="leading" constant="10" id="KW4-pz-lj8"/>
+                                    <constraint firstItem="0V7-YC-ChH" firstAttribute="top" secondItem="QoE-GE-VFP" secondAttribute="bottom" constant="15" id="L4E-zP-9Yc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lsy-Bu-MSk" secondAttribute="trailing" constant="10" id="O24-Sb-4uf"/>
+                                    <constraint firstAttribute="height" constant="320" id="Pn5-oo-PDr"/>
+                                    <constraint firstAttribute="bottom" secondItem="lsu-P3-1X5" secondAttribute="bottom" constant="10" id="Szf-dL-9oH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lsy-Bu-MSk" secondAttribute="bottom" constant="10" id="TM6-o0-ycL"/>
+                                    <constraint firstItem="QoE-GE-VFP" firstAttribute="top" secondItem="shR-hq-XqT" secondAttribute="top" constant="10" id="ewn-78-sfe"/>
+                                    <constraint firstItem="k5U-dh-1ER" firstAttribute="centerX" secondItem="shR-hq-XqT" secondAttribute="centerX" id="qBH-79-5ea"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HWE-bj-bVs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ndb-Nz-Ar4" firstAttribute="centerX" secondItem="HWE-bj-bVs" secondAttribute="centerX" id="1aY-eK-hf3"/>
-                            <constraint firstItem="HWE-bj-bVs" firstAttribute="bottom" secondItem="Lsy-Bu-MSk" secondAttribute="bottom" constant="50" id="2V0-yu-C3l"/>
-                            <constraint firstItem="HWE-bj-bVs" firstAttribute="bottom" secondItem="lsu-P3-1X5" secondAttribute="bottom" constant="50" id="4Wn-bt-KQm"/>
-                            <constraint firstItem="k5U-dh-1ER" firstAttribute="top" secondItem="0V7-YC-ChH" secondAttribute="bottom" constant="20" id="4bJ-6y-L5N"/>
-                            <constraint firstItem="0V7-YC-ChH" firstAttribute="top" secondItem="HWE-bj-bVs" secondAttribute="top" constant="100" id="LEm-pa-9bQ"/>
-                            <constraint firstItem="k5U-dh-1ER" firstAttribute="centerX" secondItem="HWE-bj-bVs" secondAttribute="centerX" id="eLq-GB-Gtz"/>
-                            <constraint firstItem="lsu-P3-1X5" firstAttribute="leading" secondItem="HWE-bj-bVs" secondAttribute="leading" constant="50" id="eVP-Ni-DDU"/>
-                            <constraint firstItem="9jf-Xh-1fE" firstAttribute="centerX" secondItem="HWE-bj-bVs" secondAttribute="centerX" id="iAg-o8-BhJ"/>
-                            <constraint firstItem="0V7-YC-ChH" firstAttribute="centerX" secondItem="HWE-bj-bVs" secondAttribute="centerX" id="iYn-vf-xGq"/>
-                            <constraint firstItem="9jf-Xh-1fE" firstAttribute="top" secondItem="ndb-Nz-Ar4" secondAttribute="bottom" constant="20" id="o9E-i9-URE"/>
-                            <constraint firstItem="ndb-Nz-Ar4" firstAttribute="top" secondItem="k5U-dh-1ER" secondAttribute="bottom" constant="20" id="xNk-bJ-mQM"/>
-                            <constraint firstItem="HWE-bj-bVs" firstAttribute="trailing" secondItem="Lsy-Bu-MSk" secondAttribute="trailing" constant="50" id="z8k-Kt-CKg"/>
+                            <constraint firstItem="shR-hq-XqT" firstAttribute="centerY" secondItem="HWE-bj-bVs" secondAttribute="centerY" id="14K-lG-jNw"/>
+                            <constraint firstItem="shR-hq-XqT" firstAttribute="centerX" secondItem="HWE-bj-bVs" secondAttribute="centerX" id="bJh-KA-0T6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="curencyView" destination="shR-hq-XqT" id="rIO-5C-7sV"/>
                         <outlet property="endCurencyButton" destination="9jf-Xh-1fE" id="dNr-Kv-Yp8"/>
                         <outlet property="initialCurencyButton" destination="k5U-dh-1ER" id="Y2v-BY-hl3"/>
                     </connections>
@@ -433,14 +462,14 @@
     </scenes>
     <resources>
         <image name="delete.left" catalog="system" width="128" height="102"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

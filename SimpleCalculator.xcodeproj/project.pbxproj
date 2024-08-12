@@ -24,6 +24,7 @@
 		7D8093462C6528BD00264E76 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8093452C6528BD00264E76 /* Constants.swift */; };
 		7D8093482C652AC600264E76 /* ExchangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8093472C652AC600264E76 /* ExchangeRateModel.swift */; };
 		7D80934A2C652DE400264E76 /* CalculatorControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8093492C652DE400264E76 /* CalculatorControllerViewModel.swift */; };
+		7D9CF7D42C6A78B200C7835A /* MockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9CF7D02C6A675800C7835A /* MockRequest.swift */; };
 		9FE36DB56B5E2330B9C068EB /* Pods_SimpleCalculator_SimpleCalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A3C89C3BA38F1872F4CA24 /* Pods_SimpleCalculator_SimpleCalculatorUITests.framework */; };
 		FEC4ED1EE155A5EBEEBDEA20 /* Pods_SimpleCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C756BC7458A729EE865BF17F /* Pods_SimpleCalculator.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		7D8093452C6528BD00264E76 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7D8093472C652AC600264E76 /* ExchangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateModel.swift; sourceTree = "<group>"; };
 		7D8093492C652DE400264E76 /* CalculatorControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorControllerViewModel.swift; sourceTree = "<group>"; };
+		7D9CF7D02C6A675800C7835A /* MockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRequest.swift; sourceTree = "<group>"; };
 		7F844D5F4D15106CCA04FFA6 /* Pods-SimpleCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleCalculator.release.xcconfig"; path = "Target Support Files/Pods-SimpleCalculator/Pods-SimpleCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		C756BC7458A729EE865BF17F /* Pods_SimpleCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06161F18C1364C3FC97BFD9 /* Pods-SimpleCalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleCalculatorTests.release.xcconfig"; path = "Target Support Files/Pods-SimpleCalculatorTests/Pods-SimpleCalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,7 +142,7 @@
 		7D1D23462C650FBC003F4D31 /* SimpleCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				7D594DD62C664E970063C2AD /* Views */,
+				7D9CF7D52C6A7A1F00C7835A /* Protocols */,
 				7D8093442C6528B100264E76 /* Utils */,
 				7D8093412C65288100264E76 /* Controllers */,
 				7D8093402C65287900264E76 /* Models */,
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				7D1D235E2C650FC0003F4D31 /* SimpleCalculatorTests.swift */,
+				7D9CF7D02C6A675800C7835A /* MockRequest.swift */,
 			);
 			path = SimpleCalculatorTests;
 			sourceTree = "<group>";
@@ -179,13 +182,6 @@
 				7D8093422C6528A400264E76 /* NetworkManager.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		7D594DD62C664E970063C2AD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		7D80933F2C65287100264E76 /* ViewModels */ = {
@@ -218,9 +214,16 @@
 			isa = PBXGroup;
 			children = (
 				7D8093452C6528BD00264E76 /* Constants.swift */,
-				7D594DDB2C6675C50063C2AD /* Protocols.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7D9CF7D52C6A7A1F00C7835A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7D594DDB2C6675C50063C2AD /* Protocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		EBC16EC9F7B5D83460DA36DA /* Pods */ = {
@@ -493,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1D235F2C650FC0003F4D31 /* SimpleCalculatorTests.swift in Sources */,
+				7D9CF7D42C6A78B200C7835A /* MockRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
