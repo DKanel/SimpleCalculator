@@ -11,12 +11,12 @@ class CalculatorControllerViewModel{
     
     func evaluteExpression(expression: String)->String?{
         let expressionsSymbols = expression.replacingOccurrences(of: "X", with: "*")
-        let regex = "^(?!.*[\\*\\/\\+\\-]{2})[\\w\\s\\*\\/\\+\\-.]+$"
+        let regex = "^(?!.*[\\*\\/\\+\\-]{2})(?!.*\\/0)[\\w\\s\\*\\/\\+\\-.]+$"
         let isValid = expressionsSymbols.range(of: regex,options: .regularExpression) != nil
         if isValid{
             let nsExpression = NSExpression(format: expressionsSymbols)
             
-            if let result = nsExpression.expressionValue(with: nil, context: nil) as? Double{
+            if let result = nsExpression.expressionValue(with: nil, context: nil) as? NSNumber{
                 return result.description
             }else{
                 print("Something went wrong")
