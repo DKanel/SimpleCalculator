@@ -25,11 +25,11 @@ Start by cloning the repository to your local machine:
 
 ### Step 2: Install CocoaPods
 
-sudo gem install cocoapods
+'sudo gem install cocoapods'
 
 ### Step 3: Install Pods
 
-pod install
+'pod install'
 
 ### Explanation:
 
