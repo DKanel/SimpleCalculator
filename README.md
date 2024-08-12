@@ -20,14 +20,14 @@ This is a simple calculator project built in Swift, which demonstrates basic ari
 
 Start by cloning the repository to your local machine:
 
--git clone 'https://github.com/DKanel/SimpleCalculator.git'
--cd calculator-project
+- git clone 'https://github.com/DKanel/SimpleCalculator.git'
+- cd calculator-project
 
-###Step 2: Install CocoaPods
+### Step 2: Install CocoaPods
 
 sudo gem install cocoapods
 
-###Step 3: Install Pods
+### Step 3: Install Pods
 
 pod install
 
